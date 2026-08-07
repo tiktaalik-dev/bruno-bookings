@@ -1,0 +1,26 @@
+info:
+  name: Ping
+  type: http
+  seq: 1
+
+http:
+  method: get
+  url: "{{BaseURL}}/:path"
+  params:
+    - name: path
+      value: ping
+      type: path
+  auth: inherit
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "201"
+      description: Successful request
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

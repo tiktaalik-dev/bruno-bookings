@@ -1,0 +1,37 @@
+opencollection: 1.0.0
+
+info:
+  name: Booker
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  headers:
+    - name: Accept
+      value: application/json
+      description: Ask the API to send data in JSON format.
+  variables:
+    - name: TokenID
+      value: ""
+      description: Authorisation token
+    - name: BaseURL
+      value: https://restful-booker.herokuapp.com
+      description: Domain for the API
+    - name: BookingID
+      value: ""
+      description: ID received from the API for a booking
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

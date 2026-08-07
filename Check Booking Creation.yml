@@ -1,0 +1,60 @@
+info:
+  name: Check Booking Creation
+  type: http
+  seq: 5
+
+http:
+  method: get
+  url: "{{BaseURL}}/:path/:id"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: path
+      value: booking
+      type: path
+    - name: id
+      value: "{{BookingID}}"
+      type: path
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        // Capture the response in a convenient constant
+        const body = res.getBody();
+
+        // Check the response to confirm the booking data matches what was requested
+        test("Server confirmed the same booking data that it was sent", function () {
+            
+          test("Booking data is registered on the correct passenger name", function () {
+            expect(body.firstname).to.equal("이나");
+            expect(body.lastname).to.equal("민");
+          });
+
+          test("The price is correct and the deposit was received", function () {
+            expect(body.totalprice).to.equal(123);
+            expect(body.depositpaid).to.equal(true);
+          });
+          
+          test("The desired dates were booked", function () {
+            expect(body.bookingdates).to.be.an("object");
+            expect(body.bookingdates.checkin).to.equal("2026-08-01");
+            expect(body.bookingdates.checkout).to.equal("2026-08-03");
+          });
+        });
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data.
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

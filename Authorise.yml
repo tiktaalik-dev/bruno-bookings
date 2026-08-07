@@ -1,0 +1,57 @@
+info:
+  name: Authorise
+  type: http
+  seq: 3
+
+http:
+  method: post
+  url: "{{BaseURL}}/:path"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: path
+      value: auth
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "username": "admin",
+        "password": "password123"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // 1. Parse the JSON response body
+        const responseData = res.getBody();
+
+        // 2. Extract the token
+        const token = responseData.token;
+
+        // 3. Save it to the collection variables
+        if (token) {
+          bru.setVar("TokenID", token);
+        } else {
+          fail("Authentication failed: Token not found in response.");
+        }
+  assertions:
+    - expression: res.body
+      operator: isJson
+      description: Check that the body contains valid JSON data.
+    - expression: res.body.token
+      operator: isString
+      description: Check that the Token ID provided is a string.
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

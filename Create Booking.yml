@@ -19,18 +19,7 @@ http:
       type: path
   body:
     type: json
-    data: |-
-      {
-        "firstname": "이나",
-        "lastname": "민",
-        "totalprice": 123,
-        "depositpaid": true,
-        "bookingdates": {
-          "checkin": "2026-08-01",
-          "checkout": "2026-08-03"
-        },
-        "additionalneeds": "Breakfast, Lunch"
-      }
+    data: ""
   auth: inherit
 
 runtime:
@@ -74,19 +63,19 @@ runtime:
             const booking = body.booking;
             
           test("Booking data is registered on the correct passenger name", function () {
-            expect(booking.firstname).to.equal("이나");
-            expect(booking.lastname).to.equal("민");
+            expect(booking.firstname).to.equal({{firstname}});
+            expect(booking.lastname).to.equal({{lastname}});
           });
 
           test("The price is correct and the deposit was received", function () {
-            expect(booking.totalprice).to.equal(123);
-            expect(booking.depositpaid).to.equal(true);
+            expect(booking.totalprice).to.equal({{totalprice}});
+            expect(booking.depositpaid).to.equal({{depositpaid}});
           });
           
           test("The desired dates were booked", function () {
             expect(booking.bookingdates).to.be.an("object");
-            expect(booking.bookingdates.checkin).to.equal("2026-08-01");
-            expect(booking.bookingdates.checkout).to.equal("2026-08-03");
+            expect(booking.bookingdates.checkin).to.equal({{checkin}});
+            expect(booking.bookingdates.checkout).to.equal({{checkout}});
           });
           } else {
             fail("The server response did not contain Booking Data!");

@@ -27,16 +27,16 @@ runtime:
     - type: after-response
       code: |-
         // 1. Parse the JSON response body
-        const responseData = res.getBody();
+        const responseData = res.body;
 
         // 2. Extract the token
         const token = responseData.token;
 
         // 3. Save it to the collection variables
         if (token) {
-          bru.setVar("TokenID", token);
+          bru.setGlobalEnvVar("TokenID", token);
         } else {
-          fail("Authentication failed: Token not found in response.");
+          throw new Error("Authentication failed: Token not found in response.");
         }
   assertions:
     - expression: res.body

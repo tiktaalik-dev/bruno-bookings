@@ -1,0 +1,2010 @@
+[
+  {
+    "iterationIndex": 0,
+    "results": [
+      {
+        "test": {
+          "filename": "Ping.yml"
+        },
+        "request": {
+          "method": "get",
+          "url": "https://restful-booker.herokuapp.com/ping",
+          "headers": {
+            "Accept": "application/json",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "content-length": "7",
+            "content-type": "text/plain; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 12:32:13 GMT",
+            "etag": "W/\"7-rM9AyJuqT6iOan/xHh+AW+7K/T8\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=PlcVdIb6hZAgxl8XS4Vk%2F48xhEZTMagPZ0M7OkoEOjg%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786365133\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=PlcVdIb6hZAgxl8XS4Vk%2F48xhEZTMagPZ0M7OkoEOjg%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786365133\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": "Created",
+          "url": "https://restful-booker.herokuapp.com/ping",
+          "responseTime": 839,
+          "duration": 839,
+          "size": 7
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "en52N1Z9ZHR9iMQINbq8z",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.013309297,
+        "name": "Ping",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Ping",
+        "path": "Ping.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "List Bookings (All).yml"
+        },
+        "request": {
+          "method": "get",
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "headers": {
+            "Accept": "application/json",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "7846",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 12:32:14 GMT",
+            "etag": "W/\"1ea6-2jKXpjweuDiB9cbxmlnFeGqErw8\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=YyWL7QdGvbrBDZdftq%2Fq5wtR%2FgD4weWZBVl6XfQn1WE%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786365134\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=YyWL7QdGvbrBDZdftq%2Fq5wtR%2FgD4weWZBVl6XfQn1WE%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786365134\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": [
+            {
+              "bookingid": 2
+            },
+            {
+              "bookingid": 3
+            },
+            {
+              "bookingid": 4
+            },
+            {
+              "bookingid": 5
+            },
+            {
+              "bookingid": 6
+            },
+            {
+              "bookingid": 7
+            },
+            {
+              "bookingid": 8
+            },
+            {
+              "bookingid": 9
+            },
+            {
+              "bookingid": 10
+            },
+            {
+              "bookingid": 11
+            },
+            {
+              "bookingid": 12
+            },
+            {
+              "bookingid": 13
+            },
+            {
+              "bookingid": 14
+            },
+            {
+              "bookingid": 15
+            },
+            {
+              "bookingid": 17
+            },
+            {
+              "bookingid": 18
+            },
+            {
+              "bookingid": 19
+            },
+            {
+              "bookingid": 20
+            },
+            {
+              "bookingid": 21
+            },
+            {
+              "bookingid": 22
+            },
+            {
+              "bookingid": 23
+            },
+            {
+              "bookingid": 24
+            },
+            {
+              "bookingid": 26
+            },
+            {
+              "bookingid": 27
+            },
+            {
+              "bookingid": 28
+            },
+            {
+              "bookingid": 29
+            },
+            {
+              "bookingid": 30
+            },
+            {
+              "bookingid": 31
+            },
+            {
+              "bookingid": 32
+            },
+            {
+              "bookingid": 33
+            },
+            {
+              "bookingid": 34
+            },
+            {
+              "bookingid": 35
+            },
+            {
+              "bookingid": 37
+            },
+            {
+              "bookingid": 38
+            },
+            {
+              "bookingid": 39
+            },
+            {
+              "bookingid": 40
+            },
+            {
+              "bookingid": 41
+            },
+            {
+              "bookingid": 42
+            },
+            {
+              "bookingid": 43
+            },
+            {
+              "bookingid": 44
+            },
+            {
+              "bookingid": 45
+            },
+            {
+              "bookingid": 46
+            },
+            {
+              "bookingid": 47
+            },
+            {
+              "bookingid": 48
+            },
+            {
+              "bookingid": 50
+            },
+            {
+              "bookingid": 52
+            },
+            {
+              "bookingid": 53
+            },
+            {
+              "bookingid": 54
+            },
+            {
+              "bookingid": 55
+            },
+            {
+              "bookingid": 57
+            },
+            {
+              "bookingid": 58
+            },
+            {
+              "bookingid": 59
+            },
+            {
+              "bookingid": 60
+            },
+            {
+              "bookingid": 61
+            },
+            {
+              "bookingid": 62
+            },
+            {
+              "bookingid": 64
+            },
+            {
+              "bookingid": 65
+            },
+            {
+              "bookingid": 66
+            },
+            {
+              "bookingid": 67
+            },
+            {
+              "bookingid": 68
+            },
+            {
+              "bookingid": 70
+            },
+            {
+              "bookingid": 71
+            },
+            {
+              "bookingid": 72
+            },
+            {
+              "bookingid": 73
+            },
+            {
+              "bookingid": 74
+            },
+            {
+              "bookingid": 75
+            },
+            {
+              "bookingid": 77
+            },
+            {
+              "bookingid": 78
+            },
+            {
+              "bookingid": 79
+            },
+            {
+              "bookingid": 80
+            },
+            {
+              "bookingid": 81
+            },
+            {
+              "bookingid": 83
+            },
+            {
+              "bookingid": 84
+            },
+            {
+              "bookingid": 85
+            },
+            {
+              "bookingid": 86
+            },
+            {
+              "bookingid": 87
+            },
+            {
+              "bookingid": 88
+            },
+            {
+              "bookingid": 89
+            },
+            {
+              "bookingid": 90
+            },
+            {
+              "bookingid": 91
+            },
+            {
+              "bookingid": 93
+            },
+            {
+              "bookingid": 94
+            },
+            {
+              "bookingid": 96
+            },
+            {
+              "bookingid": 97
+            },
+            {
+              "bookingid": 98
+            },
+            {
+              "bookingid": 100
+            },
+            {
+              "bookingid": 102
+            },
+            {
+              "bookingid": 103
+            },
+            {
+              "bookingid": 104
+            },
+            {
+              "bookingid": 105
+            },
+            {
+              "bookingid": 106
+            },
+            {
+              "bookingid": 107
+            },
+            {
+              "bookingid": 108
+            },
+            {
+              "bookingid": 110
+            },
+            {
+              "bookingid": 111
+            },
+            {
+              "bookingid": 112
+            },
+            {
+              "bookingid": 113
+            },
+            {
+              "bookingid": 114
+            },
+            {
+              "bookingid": 115
+            },
+            {
+              "bookingid": 117
+            },
+            {
+              "bookingid": 118
+            },
+            {
+              "bookingid": 120
+            },
+            {
+              "bookingid": 121
+            },
+            {
+              "bookingid": 123
+            },
+            {
+              "bookingid": 124
+            },
+            {
+              "bookingid": 125
+            },
+            {
+              "bookingid": 126
+            },
+            {
+              "bookingid": 127
+            },
+            {
+              "bookingid": 128
+            },
+            {
+              "bookingid": 129
+            },
+            {
+              "bookingid": 131
+            },
+            {
+              "bookingid": 132
+            },
+            {
+              "bookingid": 133
+            },
+            {
+              "bookingid": 134
+            },
+            {
+              "bookingid": 137
+            },
+            {
+              "bookingid": 138
+            },
+            {
+              "bookingid": 140
+            },
+            {
+              "bookingid": 141
+            },
+            {
+              "bookingid": 142
+            },
+            {
+              "bookingid": 143
+            },
+            {
+              "bookingid": 146
+            },
+            {
+              "bookingid": 147
+            },
+            {
+              "bookingid": 148
+            },
+            {
+              "bookingid": 150
+            },
+            {
+              "bookingid": 151
+            },
+            {
+              "bookingid": 153
+            },
+            {
+              "bookingid": 154
+            },
+            {
+              "bookingid": 155
+            },
+            {
+              "bookingid": 156
+            },
+            {
+              "bookingid": 157
+            },
+            {
+              "bookingid": 158
+            },
+            {
+              "bookingid": 159
+            },
+            {
+              "bookingid": 160
+            },
+            {
+              "bookingid": 164
+            },
+            {
+              "bookingid": 165
+            },
+            {
+              "bookingid": 166
+            },
+            {
+              "bookingid": 167
+            },
+            {
+              "bookingid": 170
+            },
+            {
+              "bookingid": 171
+            },
+            {
+              "bookingid": 172
+            },
+            {
+              "bookingid": 173
+            },
+            {
+              "bookingid": 176
+            },
+            {
+              "bookingid": 177
+            },
+            {
+              "bookingid": 178
+            },
+            {
+              "bookingid": 179
+            },
+            {
+              "bookingid": 180
+            },
+            {
+              "bookingid": 181
+            },
+            {
+              "bookingid": 184
+            },
+            {
+              "bookingid": 185
+            },
+            {
+              "bookingid": 187
+            },
+            {
+              "bookingid": 188
+            },
+            {
+              "bookingid": 190
+            },
+            {
+              "bookingid": 191
+            },
+            {
+              "bookingid": 192
+            },
+            {
+              "bookingid": 193
+            },
+            {
+              "bookingid": 194
+            },
+            {
+              "bookingid": 195
+            },
+            {
+              "bookingid": 196
+            },
+            {
+              "bookingid": 197
+            },
+            {
+              "bookingid": 201
+            },
+            {
+              "bookingid": 202
+            },
+            {
+              "bookingid": 204
+            },
+            {
+              "bookingid": 205
+            },
+            {
+              "bookingid": 207
+            },
+            {
+              "bookingid": 208
+            },
+            {
+              "bookingid": 209
+            },
+            {
+              "bookingid": 210
+            },
+            {
+              "bookingid": 211
+            },
+            {
+              "bookingid": 214
+            },
+            {
+              "bookingid": 215
+            },
+            {
+              "bookingid": 216
+            },
+            {
+              "bookingid": 217
+            },
+            {
+              "bookingid": 220
+            },
+            {
+              "bookingid": 221
+            },
+            {
+              "bookingid": 222
+            },
+            {
+              "bookingid": 224
+            },
+            {
+              "bookingid": 225
+            },
+            {
+              "bookingid": 226
+            },
+            {
+              "bookingid": 227
+            },
+            {
+              "bookingid": 230
+            },
+            {
+              "bookingid": 231
+            },
+            {
+              "bookingid": 232
+            },
+            {
+              "bookingid": 233
+            },
+            {
+              "bookingid": 235
+            },
+            {
+              "bookingid": 236
+            },
+            {
+              "bookingid": 237
+            },
+            {
+              "bookingid": 239
+            },
+            {
+              "bookingid": 241
+            },
+            {
+              "bookingid": 242
+            },
+            {
+              "bookingid": 244
+            },
+            {
+              "bookingid": 245
+            },
+            {
+              "bookingid": 246
+            },
+            {
+              "bookingid": 247
+            },
+            {
+              "bookingid": 248
+            },
+            {
+              "bookingid": 249
+            },
+            {
+              "bookingid": 253
+            },
+            {
+              "bookingid": 254
+            },
+            {
+              "bookingid": 255
+            },
+            {
+              "bookingid": 256
+            },
+            {
+              "bookingid": 259
+            },
+            {
+              "bookingid": 260
+            },
+            {
+              "bookingid": 261
+            },
+            {
+              "bookingid": 262
+            },
+            {
+              "bookingid": 265
+            },
+            {
+              "bookingid": 266
+            },
+            {
+              "bookingid": 267
+            },
+            {
+              "bookingid": 268
+            },
+            {
+              "bookingid": 271
+            },
+            {
+              "bookingid": 272
+            },
+            {
+              "bookingid": 273
+            },
+            {
+              "bookingid": 274
+            },
+            {
+              "bookingid": 277
+            },
+            {
+              "bookingid": 278
+            },
+            {
+              "bookingid": 280
+            },
+            {
+              "bookingid": 281
+            },
+            {
+              "bookingid": 282
+            },
+            {
+              "bookingid": 283
+            },
+            {
+              "bookingid": 286
+            },
+            {
+              "bookingid": 287
+            },
+            {
+              "bookingid": 288
+            },
+            {
+              "bookingid": 289
+            },
+            {
+              "bookingid": 292
+            },
+            {
+              "bookingid": 293
+            },
+            {
+              "bookingid": 294
+            },
+            {
+              "bookingid": 295
+            },
+            {
+              "bookingid": 296
+            },
+            {
+              "bookingid": 297
+            },
+            {
+              "bookingid": 298
+            },
+            {
+              "bookingid": 301
+            },
+            {
+              "bookingid": 302
+            },
+            {
+              "bookingid": 303
+            },
+            {
+              "bookingid": 305
+            },
+            {
+              "bookingid": 307
+            },
+            {
+              "bookingid": 308
+            },
+            {
+              "bookingid": 309
+            },
+            {
+              "bookingid": 310
+            },
+            {
+              "bookingid": 312
+            },
+            {
+              "bookingid": 313
+            },
+            {
+              "bookingid": 314
+            },
+            {
+              "bookingid": 315
+            },
+            {
+              "bookingid": 318
+            },
+            {
+              "bookingid": 319
+            },
+            {
+              "bookingid": 320
+            },
+            {
+              "bookingid": 321
+            },
+            {
+              "bookingid": 324
+            },
+            {
+              "bookingid": 325
+            },
+            {
+              "bookingid": 327
+            },
+            {
+              "bookingid": 328
+            },
+            {
+              "bookingid": 329
+            },
+            {
+              "bookingid": 330
+            },
+            {
+              "bookingid": 333
+            },
+            {
+              "bookingid": 334
+            },
+            {
+              "bookingid": 335
+            },
+            {
+              "bookingid": 336
+            },
+            {
+              "bookingid": 337
+            },
+            {
+              "bookingid": 339
+            },
+            {
+              "bookingid": 342
+            },
+            {
+              "bookingid": 343
+            },
+            {
+              "bookingid": 344
+            },
+            {
+              "bookingid": 345
+            },
+            {
+              "bookingid": 348
+            },
+            {
+              "bookingid": 349
+            },
+            {
+              "bookingid": 350
+            },
+            {
+              "bookingid": 351
+            },
+            {
+              "bookingid": 354
+            },
+            {
+              "bookingid": 355
+            },
+            {
+              "bookingid": 356
+            },
+            {
+              "bookingid": 357
+            },
+            {
+              "bookingid": 360
+            },
+            {
+              "bookingid": 361
+            },
+            {
+              "bookingid": 362
+            },
+            {
+              "bookingid": 363
+            },
+            {
+              "bookingid": 365
+            },
+            {
+              "bookingid": 367
+            },
+            {
+              "bookingid": 368
+            },
+            {
+              "bookingid": 369
+            },
+            {
+              "bookingid": 371
+            },
+            {
+              "bookingid": 372
+            },
+            {
+              "bookingid": 373
+            },
+            {
+              "bookingid": 375
+            },
+            {
+              "bookingid": 376
+            },
+            {
+              "bookingid": 379
+            },
+            {
+              "bookingid": 380
+            },
+            {
+              "bookingid": 381
+            },
+            {
+              "bookingid": 382
+            },
+            {
+              "bookingid": 384
+            },
+            {
+              "bookingid": 385
+            },
+            {
+              "bookingid": 386
+            },
+            {
+              "bookingid": 388
+            },
+            {
+              "bookingid": 389
+            },
+            {
+              "bookingid": 390
+            },
+            {
+              "bookingid": 391
+            },
+            {
+              "bookingid": 393
+            },
+            {
+              "bookingid": 395
+            },
+            {
+              "bookingid": 396
+            },
+            {
+              "bookingid": 398
+            },
+            {
+              "bookingid": 399
+            },
+            {
+              "bookingid": 400
+            },
+            {
+              "bookingid": 401
+            },
+            {
+              "bookingid": 403
+            },
+            {
+              "bookingid": 404
+            },
+            {
+              "bookingid": 406
+            },
+            {
+              "bookingid": 408
+            },
+            {
+              "bookingid": 409
+            },
+            {
+              "bookingid": 410
+            },
+            {
+              "bookingid": 411
+            },
+            {
+              "bookingid": 414
+            },
+            {
+              "bookingid": 415
+            },
+            {
+              "bookingid": 416
+            },
+            {
+              "bookingid": 417
+            },
+            {
+              "bookingid": 419
+            },
+            {
+              "bookingid": 420
+            },
+            {
+              "bookingid": 421
+            },
+            {
+              "bookingid": 423
+            },
+            {
+              "bookingid": 424
+            },
+            {
+              "bookingid": 426
+            },
+            {
+              "bookingid": 427
+            },
+            {
+              "bookingid": 428
+            },
+            {
+              "bookingid": 429
+            },
+            {
+              "bookingid": 432
+            },
+            {
+              "bookingid": 434
+            },
+            {
+              "bookingid": 435
+            },
+            {
+              "bookingid": 436
+            },
+            {
+              "bookingid": 438
+            },
+            {
+              "bookingid": 439
+            },
+            {
+              "bookingid": 440
+            },
+            {
+              "bookingid": 443
+            },
+            {
+              "bookingid": 444
+            },
+            {
+              "bookingid": 445
+            },
+            {
+              "bookingid": 446
+            },
+            {
+              "bookingid": 449
+            },
+            {
+              "bookingid": 450
+            },
+            {
+              "bookingid": 451
+            },
+            {
+              "bookingid": 452
+            },
+            {
+              "bookingid": 455
+            },
+            {
+              "bookingid": 456
+            },
+            {
+              "bookingid": 457
+            },
+            {
+              "bookingid": 458
+            },
+            {
+              "bookingid": 460
+            },
+            {
+              "bookingid": 462
+            },
+            {
+              "bookingid": 463
+            },
+            {
+              "bookingid": 464
+            },
+            {
+              "bookingid": 467
+            },
+            {
+              "bookingid": 468
+            },
+            {
+              "bookingid": 469
+            },
+            {
+              "bookingid": 470
+            },
+            {
+              "bookingid": 471
+            },
+            {
+              "bookingid": 473
+            },
+            {
+              "bookingid": 474
+            },
+            {
+              "bookingid": 475
+            },
+            {
+              "bookingid": 476
+            },
+            {
+              "bookingid": 478
+            },
+            {
+              "bookingid": 479
+            },
+            {
+              "bookingid": 482
+            },
+            {
+              "bookingid": 483
+            },
+            {
+              "bookingid": 485
+            },
+            {
+              "bookingid": 486
+            },
+            {
+              "bookingid": 487
+            },
+            {
+              "bookingid": 488
+            },
+            {
+              "bookingid": 490
+            },
+            {
+              "bookingid": 491
+            },
+            {
+              "bookingid": 493
+            },
+            {
+              "bookingid": 495
+            },
+            {
+              "bookingid": 496
+            },
+            {
+              "bookingid": 497
+            },
+            {
+              "bookingid": 498
+            },
+            {
+              "bookingid": 499
+            },
+            {
+              "bookingid": 502
+            },
+            {
+              "bookingid": 503
+            },
+            {
+              "bookingid": 504
+            },
+            {
+              "bookingid": 506
+            },
+            {
+              "bookingid": 507
+            },
+            {
+              "bookingid": 509
+            },
+            {
+              "bookingid": 510
+            },
+            {
+              "bookingid": 511
+            },
+            {
+              "bookingid": 512
+            },
+            {
+              "bookingid": 513
+            },
+            {
+              "bookingid": 515
+            },
+            {
+              "bookingid": 518
+            },
+            {
+              "bookingid": 519
+            },
+            {
+              "bookingid": 520
+            },
+            {
+              "bookingid": 522
+            },
+            {
+              "bookingid": 524
+            },
+            {
+              "bookingid": 525
+            },
+            {
+              "bookingid": 526
+            },
+            {
+              "bookingid": 528
+            },
+            {
+              "bookingid": 530
+            },
+            {
+              "bookingid": 531
+            },
+            {
+              "bookingid": 532
+            },
+            {
+              "bookingid": 534
+            },
+            {
+              "bookingid": 536
+            },
+            {
+              "bookingid": 537
+            },
+            {
+              "bookingid": 539
+            },
+            {
+              "bookingid": 540
+            },
+            {
+              "bookingid": 542
+            },
+            {
+              "bookingid": 543
+            },
+            {
+              "bookingid": 544
+            },
+            {
+              "bookingid": 545
+            },
+            {
+              "bookingid": 547
+            },
+            {
+              "bookingid": 549
+            },
+            {
+              "bookingid": 550
+            },
+            {
+              "bookingid": 551
+            },
+            {
+              "bookingid": 554
+            },
+            {
+              "bookingid": 555
+            },
+            {
+              "bookingid": 556
+            },
+            {
+              "bookingid": 557
+            },
+            {
+              "bookingid": 558
+            },
+            {
+              "bookingid": 559
+            },
+            {
+              "bookingid": 561
+            },
+            {
+              "bookingid": 563
+            },
+            {
+              "bookingid": 564
+            },
+            {
+              "bookingid": 565
+            },
+            {
+              "bookingid": 566
+            },
+            {
+              "bookingid": 569
+            },
+            {
+              "bookingid": 570
+            },
+            {
+              "bookingid": 572
+            },
+            {
+              "bookingid": 573
+            },
+            {
+              "bookingid": 574
+            },
+            {
+              "bookingid": 575
+            },
+            {
+              "bookingid": 576
+            },
+            {
+              "bookingid": 578
+            },
+            {
+              "bookingid": 579
+            },
+            {
+              "bookingid": 580
+            },
+            {
+              "bookingid": 582
+            },
+            {
+              "bookingid": 584
+            },
+            {
+              "bookingid": 585
+            },
+            {
+              "bookingid": 586
+            },
+            {
+              "bookingid": 587
+            },
+            {
+              "bookingid": 590
+            },
+            {
+              "bookingid": 591
+            },
+            {
+              "bookingid": 593
+            },
+            {
+              "bookingid": 594
+            },
+            {
+              "bookingid": 595
+            },
+            {
+              "bookingid": 596
+            },
+            {
+              "bookingid": 597
+            },
+            {
+              "bookingid": 598
+            },
+            {
+              "bookingid": 602
+            },
+            {
+              "bookingid": 603
+            },
+            {
+              "bookingid": 604
+            },
+            {
+              "bookingid": 605
+            },
+            {
+              "bookingid": 607
+            }
+          ],
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "responseTime": 620,
+          "duration": 620,
+          "size": 7846
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "2_XThqVusKo6ZR2Hqmf4t",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "4pvZRAUvYOmcgCpUP5K1c",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.678086573,
+        "name": "List Bookings (All)",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/List Bookings (All)",
+        "path": "List Bookings (All).yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Authorise.yml"
+        },
+        "request": {
+          "method": "post",
+          "url": "https://restful-booker.herokuapp.com/auth",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "27",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 12:32:14 GMT",
+            "etag": "W/\"1b-gxueQVY6eoUOnT7Ho7PbPvKXgvE\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=YyWL7QdGvbrBDZdftq%2Fq5wtR%2FgD4weWZBVl6XfQn1WE%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786365134\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=YyWL7QdGvbrBDZdftq%2Fq5wtR%2FgD4weWZBVl6XfQn1WE%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786365134\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": {
+            "token": "23b1fd2c8c25fd4"
+          },
+          "url": "https://restful-booker.herokuapp.com/auth",
+          "responseTime": 756,
+          "duration": 756,
+          "size": 27
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "vS2T7fO-vtueQp-cXEs8q",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          },
+          {
+            "uid": "0zdOjOPjUcKzhkeIOpi7f",
+            "lhsExpr": "res.body.token",
+            "rhsExpr": "isString",
+            "rhsOperand": "",
+            "operator": "isString",
+            "status": "pass"
+          },
+          {
+            "uid": "Q7SfLRsYGLYFSuiuFbZTI",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.378838292,
+        "name": "Authorise",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Authorise",
+        "path": "Authorise.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Create Booking.yml"
+        },
+        "request": {
+          "method": "post",
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Cookie": "********"
+          },
+          "data": "{\n    \"firstname\": \"Lucia\",\n    \"lastname\": \"Perez\",\n    \"totalprice\": 210,\n    \"depositpaid\": true,\n    \"bookingdates\": {\n      \"checkin\": \"2026-11-01\",\n      \"checkout\": \"2026-11-04\"\n    },\n    \"additionalneeds\": \"Breakfast\"\n  }"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "198",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 12:32:16 GMT",
+            "etag": "W/\"c6-42hIwPPNt3SkJ855kLZT3JdEKUg\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=onMXIX1wxcyCbOxyav%2F6BcxN5PI0d%2F6LbP54Ag%2Bhcgk%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786365136\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=onMXIX1wxcyCbOxyav%2F6BcxN5PI0d%2F6LbP54Ag%2Bhcgk%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786365136\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": {
+            "bookingid": 628,
+            "booking": {
+              "firstname": "Lucia",
+              "lastname": "Perez",
+              "totalprice": 210,
+              "depositpaid": true,
+              "bookingdates": {
+                "checkin": "2026-11-01",
+                "checkout": "2026-11-04"
+              },
+              "additionalneeds": "Breakfast"
+            }
+          },
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "responseTime": 599,
+          "duration": 599,
+          "size": 198
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "n8d__FB7Am3WWkuRBt5XI",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "tNNIswP3qPXVcZuXv5R6c",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          }
+        ],
+        "testResults": [
+          {
+            "description": "Server returned a Booking ID",
+            "status": "pass",
+            "uid": "DkrFIQg9xYw7MWlS3LmYv"
+          },
+          {
+            "description": "Response includes booking data",
+            "status": "pass",
+            "uid": "57Q4wC_3B9-DsXMM9LDTs"
+          },
+          {
+            "description": "Booking data is registered on the correct passenger name",
+            "status": "pass",
+            "uid": "BZuoJIYqxjFh_ug_Y0qvm"
+          },
+          {
+            "description": "The price is correct and the deposit was received",
+            "status": "pass",
+            "uid": "XJFRcdQsBCcD38eMUtUDi"
+          },
+          {
+            "description": "The desired dates were booked",
+            "status": "pass",
+            "uid": "IGzNWHP6s53nHKJcAYbs4"
+          },
+          {
+            "description": "The Additional Needs were recorded",
+            "status": "pass",
+            "uid": "MfkpkT7thBs989-QEsEY8"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.423620912,
+        "name": "Create Booking",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Create Booking",
+        "path": "Create Booking.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Check Booking Creation.yml"
+        },
+        "request": {
+          "method": "get",
+          "url": "https://restful-booker.herokuapp.com/booking/628",
+          "headers": {
+            "Accept": "application/json",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "170",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 12:32:17 GMT",
+            "etag": "W/\"aa-2MDLvhSflbCSPqOO48iZEZPpQDY\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=O8GUtzVXWfmKdblZ0yDX%2FCdSgCuP7LyC32VPxcX2OxY%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786365137\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=O8GUtzVXWfmKdblZ0yDX%2FCdSgCuP7LyC32VPxcX2OxY%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786365137\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": {
+            "firstname": "Lucia",
+            "lastname": "Perez",
+            "totalprice": 210,
+            "depositpaid": true,
+            "bookingdates": {
+              "checkin": "2026-11-01",
+              "checkout": "2026-11-04"
+            },
+            "additionalneeds": "Breakfast"
+          },
+          "url": "https://restful-booker.herokuapp.com/booking/628",
+          "responseTime": 738,
+          "duration": 738,
+          "size": 170
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "oRQXvpq0bfef6rmlmtvTl",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "H8SdZ7vjTvLlXde3NjSiJ",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          }
+        ],
+        "testResults": [
+          {
+            "description": "Booking data is registered on the correct passenger name",
+            "status": "pass",
+            "uid": "9mzKvCWBAHTDIrFd0UjqQ"
+          },
+          {
+            "description": "The price is correct and the deposit was received",
+            "status": "pass",
+            "uid": "7yNT5nYDchDR18W2zZpwo"
+          },
+          {
+            "description": "The desired dates were booked",
+            "status": "pass",
+            "uid": "PtVBTJqMwsJle7YRXj1bc"
+          },
+          {
+            "description": "The Additional Needs were recorded",
+            "status": "pass",
+            "uid": "r8xbXq0YbbSNQkX63pai0"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.303801277,
+        "name": "Check Booking Creation",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Check Booking Creation",
+        "path": "Check Booking Creation.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Update Booking.yml"
+        },
+        "request": {
+          "method": "put",
+          "url": "https://restful-booker.herokuapp.com/booking/628",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Cookie": "********"
+          },
+          "data": "{\n    \"firstname\": \"Lucia\",\n    \"lastname\": \"Perez\",\n    \"totalprice\": 210,\n    \"depositpaid\": true,\n    \"bookingdates\": {\n      \"checkin\": \"2026-11-01\",\n      \"checkout\": \"2026-11-04\"\n    },\n    \"additionalneeds\": \"Breakfast\"\n  }"
+        },
+        "response": {
+          "status": 403,
+          "statusText": "Forbidden",
+          "headers": {
+            "content-length": "9",
+            "content-type": "text/plain; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 12:32:19 GMT",
+            "etag": "W/\"9-PatfYBLj4Um1qTm5zrukoLhNyPU\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=wrSYtPNZdzY945oI53AvBqhW7XCcJNaZk6LQNNGj%2Bik%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786365139\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=wrSYtPNZdzY945oI53AvBqhW7XCcJNaZk6LQNNGj%2Bik%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786365139\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": "Forbidden",
+          "url": "https://restful-booker.herokuapp.com/booking/628",
+          "responseTime": 685,
+          "duration": 685,
+          "size": 9
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "N0_zvEC2Ar9sCBhjLyhjF",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 403 to equal 200"
+          },
+          {
+            "uid": "vd87ipfnTMnRtOWMlXuOA",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "fail",
+            "error": "expected 'Forbidden' to be JSON"
+          }
+        ],
+        "testResults": [
+          {
+            "description": "Booking data is registered on the correct passenger name",
+            "status": "fail",
+            "error": "expected undefined to equal 'Lucia'",
+            "uid": "AnwJPR5UdAiIpjx4qE9Rf"
+          },
+          {
+            "description": "The price is correct and the deposit was received",
+            "status": "fail",
+            "error": "expected undefined to equal 210",
+            "uid": "QCvDpp1TfzJALck2cHMGg"
+          },
+          {
+            "description": "The desired dates were booked",
+            "status": "fail",
+            "error": "expected undefined to be an object",
+            "uid": "Z1s_gHxuT6PIK8AynbseX"
+          },
+          {
+            "description": "The Additional Needs were recorded",
+            "status": "fail",
+            "error": "expected undefined to equal 'Breakfast'",
+            "uid": "5QE3OFqVn9BRwERmmHrpE"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.050801128,
+        "name": "Update Booking",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Update Booking",
+        "path": "Update Booking.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Check Booking Update.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Check Booking Update",
+        "name": "Check Booking Update",
+        "path": "Check Booking Update.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Partial Update Booking.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Partial Update Booking",
+        "name": "Partial Update Booking",
+        "path": "Partial Update Booking.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Check Partial Booking Update.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Check Partial Booking Update",
+        "name": "Check Partial Booking Update",
+        "path": "Check Partial Booking Update.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Delete Booking.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Delete Booking",
+        "name": "Delete Booking",
+        "path": "Delete Booking.yml",
+        "iterationIndex": 0
+      }
+    ],
+    "summary": {
+      "totalRequests": 10,
+      "passedRequests": 5,
+      "failedRequests": 1,
+      "errorRequests": 0,
+      "skippedRequests": 4,
+      "skippedByBail": 4,
+      "totalAssertions": 12,
+      "passedAssertions": 10,
+      "failedAssertions": 2,
+      "totalTests": 14,
+      "passedTests": 10,
+      "failedTests": 4,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  },
+  {
+    "iterationIndex": 1,
+    "results": [],
+    "summary": {
+      "totalRequests": 10,
+      "passedRequests": 0,
+      "failedRequests": 0,
+      "errorRequests": 0,
+      "skippedRequests": 10,
+      "skippedByUser": 0,
+      "skippedByBail": 10,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  },
+  {
+    "iterationIndex": 2,
+    "results": [],
+    "summary": {
+      "totalRequests": 10,
+      "passedRequests": 0,
+      "failedRequests": 0,
+      "errorRequests": 0,
+      "skippedRequests": 10,
+      "skippedByUser": 0,
+      "skippedByBail": 10,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  }
+]

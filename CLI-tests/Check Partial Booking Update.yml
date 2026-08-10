@@ -1,0 +1,79 @@
+info:
+  name: Check Partial Booking Update
+  type: http
+  seq: 9
+
+http:
+  method: get
+  url: "{{RequestURL}}"
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        // Get the base domain variable
+        const baseUrl = bru.getCollectionVar("BaseURL");
+
+        // Get the dynamic Token/ID set when creating the booking
+        const bookingId = bru.getGlobalEnvVar("BookingID");
+
+        // Build the complete path string manually
+        const fullPath = `${baseUrl}/booking/${bookingId}`;
+
+        // Save the URL as a global variable
+        bru.setGlobalEnvVar("RequestURL", fullPath);
+
+        // Log the URL built above
+        console.log("--- CLI NETWORK URL DISPATCHED ---");
+        console.log(fullPath);
+    - type: tests
+      code: |-
+        // Capture the response in a convenient constant
+        const body = res.body;
+
+        // Capture the json data from the batch file into convenient variables
+        let getRunVars = bru.runner.iterationData.get;
+        let guestFirstName = getRunVars("firstname");
+        let guestLastName = getRunVars("lastname");
+        let guestTotalPrice = Number(getRunVars("totalprice"));
+        let guestDepositPaid = getRunVars("depositpaid") === "true" || getRunVars("depositpaid") === true;
+        let guestNeeds = getRunVars("additionalneeds");
+
+        // Check the response to confirm the booking data matches what was requested
+        test("Booking data is registered on the correct passenger name", function () {
+          expect(body.firstname).to.equal(guestFirstName);
+          expect(body.lastname).to.equal(guestLastName);
+        });
+
+        test("The price is correct and the deposit was received", function () {
+          expect(body.totalprice).to.equal(guestTotalPrice);
+          expect(body.depositpaid).to.equal(guestDepositPaid);
+        });
+          
+        test("The desired dates were booked", function () {
+          expect(body.bookingdates).to.be.an("object");
+          expect(body.bookingdates.checkin).to.equal("2026-08-01");
+          expect(body.bookingdates.checkout).to.equal("2026-08-04");
+        });
+          
+        test("The Additional Needs were recorded", function () {
+          expect(body.additionalneeds).to.equal(guestNeeds);
+        });
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful.
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data.
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

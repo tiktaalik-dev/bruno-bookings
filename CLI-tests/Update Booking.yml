@@ -1,0 +1,129 @@
+info:
+  name: Update Booking
+  type: http
+  seq: 6
+
+http:
+  method: put
+  url: "{{RequestURL}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+    - name: Cookie
+      value: token={{TokenID}}
+  body:
+    type: json
+    data: |-
+      {
+          "firstname": "{{firstname}}",
+          "lastname": "{{lastname}}",
+          "totalprice": {{totalprice}},
+          "depositpaid": {{depositpaid}},
+          "bookingdates": {
+            "checkin": "{{checkin}}",
+            "checkout": "{{checkout}}"
+          },
+          "additionalneeds": {{formattedNeeds}}
+        }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        // Get the base domain variable
+        const baseUrl = bru.getCollectionVar("BaseURL");
+
+        // Get the dynamic Token/ID set when creating the booking
+        const bookingId = bru.getGlobalEnvVar("BookingID");
+
+        // Build the complete path string manually
+        const fullPath = `${baseUrl}/booking/${bookingId}`;
+
+        // Save the URL as a global variable
+        bru.setGlobalEnvVar("RequestURL", fullPath);
+
+        // Log the URL built above
+        console.log("--- CLI NETWORK URL DISPATCHED ---");
+        console.log(fullPath);
+
+        // Get the ID token from the global variable
+        const currentToken = bru.getGlobalEnvVar("TokenID");
+        console.log("--- OUTGOING AUTHENTICATION DEBUG ---");
+        console.log("Raw Token value in memory: ", currentToken);
+
+        // Build the authentication "Cookie" header
+        if (currentToken) {
+          req.setHeader("Cookie", `token=${currentToken}`);
+          
+          // Log the result
+          console.log(`Successfully attached cookie authorization token to request.`);
+        } else {
+          
+          // If it failed, throw an exception
+          throw new Error("Pre-request Intercept Failure: TokenID was missing from global memory allocations.");
+        }
+
+        // Fix the problem when the 'additionalneeds' variable is null or undefined, which
+        // breaks the tests because null would be sent as a string
+        // First, get the current value
+        const needsValue = bru.runner.iterationData.get("additionalneeds");
+
+        if (needsValue === null || needsValue === undefined) {
+          // If it is null, send it raw without quotes
+          bru.setGlobalEnvVar("formattedNeeds", "null");
+        } else {
+          // If it is a string, wrap it in literal quotes here
+          bru.setGlobalEnvVar("formattedNeeds", `"${needsValue}"`);
+        }
+    - type: tests
+      code: |-
+        // Capture the response in a convenient constant
+        const body = res.body;
+
+        // Capture the json data from the batch file into convenient variables
+        let getRunVars = bru.runner.iterationData.get;
+        let guestFirstName = getRunVars("firstname");
+        let guestLastName = getRunVars("lastname");
+        let guestTotalPrice = Number(getRunVars("totalprice"));
+        let guestDepositPaid = getRunVars("depositpaid") === "true" || getRunVars("depositpaid") === true;
+        let guestCheckin = getRunVars("checkin");
+        let guestCheckout = getRunVars("checkout");
+        let guestNeeds = getRunVars("additionalneeds");
+
+        // Check the response to confirm the booking data matches what was requested
+        test("Booking data is registered on the correct passenger name", function () {
+          expect(body.firstname).to.equal(guestFirstName);
+          expect(body.lastname).to.equal(guestLastName);
+        });
+
+        test("The price is correct and the deposit was received", function () {
+          expect(body.totalprice).to.equal(guestTotalPrice);
+          expect(body.depositpaid).to.equal(guestDepositPaid);
+        });
+          
+        test("The desired dates were booked", function () {
+          expect(body.bookingdates).to.be.an("object");
+          expect(body.bookingdates.checkin).to.equal(guestCheckin);
+          expect(body.bookingdates.checkout).to.equal(guestCheckout);
+        });
+          
+        test("The Additional Needs were recorded", function () {
+          expect(body.additionalneeds).to.equal(guestNeeds);
+        });
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful.
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data.
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

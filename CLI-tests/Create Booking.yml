@@ -1,0 +1,158 @@
+info:
+  name: Create Booking
+  type: http
+  seq: 4
+
+http:
+  method: post
+  url: "{{BaseURL}}/:path"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Cookie
+      value: token={{TokenID}}
+    - name: Accept
+      value: application/json
+  params:
+    - name: path
+      value: booking
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "firstname": "{{firstname}}",
+          "lastname": "{{lastname}}",
+          "totalprice": {{totalprice}},
+          "depositpaid": {{depositpaid}},
+          "bookingdates": {
+            "checkin": "{{checkin}}",
+            "checkout": "{{checkout}}"
+          },
+          "additionalneeds": {{formattedNeeds}}
+        }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        // let responseData = req.body;
+        // console.log("--- OUTGOING REQUEST BODY ---");
+        // console.log(JSON.stringify(responseData, null, 2));
+
+        // Get the ID token from the global variable
+        const currentToken = bru.getGlobalEnvVar("TokenID");
+
+        // Build the authentication "Cookie" header
+        if (currentToken) {
+          req.setHeader("Cookie", `token=${currentToken}`);
+          
+          // Log the result
+          console.log(`Successfully attached cookie authorization token to request.`);
+        } else {
+          
+          // If it failed, throw an exception
+          throw new Error("Pre-request Intercept Failure: TokenID was missing from global memory allocations.");
+        }
+
+        // Fix the problem when the 'additionalneeds' variable is null or undefined, which
+        // breaks the tests because null would be sent as a string
+        // First, get the current value
+        const needsValue = bru.runner.iterationData.get("additionalneeds");
+
+        if (needsValue === null || needsValue === undefined) {
+          // If it is null, send it raw without quotes
+          bru.setGlobalEnvVar("formattedNeeds", "null");
+        } else {
+          // If it is a string, wrap it in literal quotes here
+          bru.setGlobalEnvVar("formattedNeeds", `"${needsValue}"`);
+        }
+    - type: after-response
+      code: |-
+        // 1. Parse the JSON response body
+        const responseData = res.body;
+        // console.log("--- ACTUAL PAYLOAD SENT TO SERVER ---");
+        // console.log(req.getBody({ raw: true })); 
+
+        // 2. Extract the token
+        const bookingId = responseData.bookingid;
+
+        // 3. Save it to the collection variables
+        if (bookingId) {
+          bru.setGlobalEnvVar("BookingID", bookingId);
+        //   console.log("BookingID was set to: " + bookingId);
+        } else {
+          throw new Error("Booking ID capture failed: 'bookingid' not found in response.");
+        }
+    - type: tests
+      code: |-
+        // Capture the response in a convenient constant
+        const body = res.body;
+
+        // Capture the json data from the batch file into convenient variables
+        let getRunVars = bru.runner.iterationData.get;
+        let guestFirstName = getRunVars("firstname");
+        let guestLastName = getRunVars("lastname");
+        let guestTotalPrice = Number(getRunVars("totalprice"));
+        let guestDepositPaid = getRunVars("depositpaid") === "true" || getRunVars("depositpaid") === true;
+        let guestCheckin = getRunVars("checkin");
+        let guestCheckout = getRunVars("checkout");
+        let guestNeeds = getRunVars("additionalneeds");
+
+        // Check whether the server returned a Booking ID
+        test("Server returned a Booking ID", function () {
+          expect(body).to.have.property("bookingid");
+          expect(Number.isInteger(body.bookingid)).to.be.true;
+        });
+
+        // Check the response to confirm the booking data matches what was requested
+          test("Response includes booking data", function () {  
+          expect(body).to.have.property("booking");
+          expect(body.booking).to.be.an("object");
+          });
+          
+          // Only proceed if the body includes a booking data object
+          if (expect(body).to.have.property("booking")) {
+            
+            // Create an alias for the booking data block
+            const booking = body.booking;
+            
+          test("Booking data is registered on the correct passenger name", function () {
+            expect(booking.firstname).to.equal(guestFirstName);
+            expect(booking.lastname).to.equal(guestLastName);
+          });
+
+          test("The price is correct and the deposit was received", function () {
+            expect(booking.totalprice).to.equal(guestTotalPrice);
+            expect(booking.depositpaid).to.equal(guestDepositPaid);
+          });
+          
+          test("The desired dates were booked", function () {
+            expect(booking.bookingdates).to.be.an("object");
+            expect(booking.bookingdates.checkin).to.equal(guestCheckin);
+            expect(booking.bookingdates.checkout).to.equal(guestCheckout);
+          });
+          
+          test("The Additional Needs were recorded", function () {
+            expect(booking.additionalneeds).to.equal(guestNeeds);
+          });
+          } else {
+            throw new Error("The server response did not contain Booking Data!");
+          }
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful.
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data.
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+app:
+  enabled: true

@@ -1,0 +1,816 @@
+[
+  {
+    "iterationIndex": 0,
+    "results": [
+      {
+        "test": {
+          "filename": "Ping.yml"
+        },
+        "request": {
+          "method": "get",
+          "url": "https://restful-booker.herokuapp.com/ping",
+          "headers": {
+            "Accept": "application/json",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "content-length": "7",
+            "content-type": "text/plain; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 11:40:48 GMT",
+            "etag": "W/\"7-rM9AyJuqT6iOan/xHh+AW+7K/T8\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=tAlQGv7dfwTABZqE2FMkHSKMSGZoGAzN0pnTlNf7S5I%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786362047\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=tAlQGv7dfwTABZqE2FMkHSKMSGZoGAzN0pnTlNf7S5I%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786362047\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": "Created",
+          "url": "https://restful-booker.herokuapp.com/ping",
+          "responseTime": 1976,
+          "duration": 1976,
+          "size": 7
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "DwLWr064ljyPFE-GTQ2t6",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 2.244294648,
+        "name": "Ping",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Ping",
+        "path": "Ping.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "List Bookings (All).yml"
+        },
+        "request": {
+          "method": "get",
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "headers": {
+            "Accept": "application/json",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "400",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 11:40:49 GMT",
+            "etag": "W/\"190-ej5A95Q4MR+lAGBh+e5KZHmX+f8\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=ai32QKBo1L8tYnKoFDWvrhkOaRAN5BHeq4NnNxpOxoE%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786362049\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=ai32QKBo1L8tYnKoFDWvrhkOaRAN5BHeq4NnNxpOxoE%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786362049\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": [
+            {
+              "bookingid": 1
+            },
+            {
+              "bookingid": 2
+            },
+            {
+              "bookingid": 3
+            },
+            {
+              "bookingid": 4
+            },
+            {
+              "bookingid": 5
+            },
+            {
+              "bookingid": 6
+            },
+            {
+              "bookingid": 7
+            },
+            {
+              "bookingid": 8
+            },
+            {
+              "bookingid": 9
+            },
+            {
+              "bookingid": 10
+            },
+            {
+              "bookingid": 11
+            },
+            {
+              "bookingid": 12
+            },
+            {
+              "bookingid": 13
+            },
+            {
+              "bookingid": 14
+            },
+            {
+              "bookingid": 15
+            },
+            {
+              "bookingid": 16
+            },
+            {
+              "bookingid": 17
+            },
+            {
+              "bookingid": 18
+            },
+            {
+              "bookingid": 19
+            },
+            {
+              "bookingid": 20
+            },
+            {
+              "bookingid": 21
+            },
+            {
+              "bookingid": 22
+            },
+            {
+              "bookingid": 23
+            },
+            {
+              "bookingid": 24
+            }
+          ],
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "responseTime": 722,
+          "duration": 722,
+          "size": 400
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "R3UAu-5PWAilfjbbv1hoN",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "vkyth-M_teViNbj4LfZmp",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.771127254,
+        "name": "List Bookings (All)",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/List Bookings (All)",
+        "path": "List Bookings (All).yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Authorise.yml"
+        },
+        "request": {
+          "method": "post",
+          "url": "https://restful-booker.herokuapp.com/auth",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "data": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "27",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 11:40:50 GMT",
+            "etag": "W/\"1b-Wbg/Z8g9I3YDDL/M938mSaUGM4k\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=M0RgFYYuuJojNGQtHrlUUwMg7vmKh2JJrZNXOHr4pOU%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786362050\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=M0RgFYYuuJojNGQtHrlUUwMg7vmKh2JJrZNXOHr4pOU%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786362050\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": {
+            "token": "108a9597c546749"
+          },
+          "url": "https://restful-booker.herokuapp.com/auth",
+          "responseTime": 580,
+          "duration": 580,
+          "size": 27
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "vyXle2vR9lorAZ0ZpG5CD",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          },
+          {
+            "uid": "7HDpxy1gJ4eKe_-xrgH2P",
+            "lhsExpr": "res.body.token",
+            "rhsExpr": "isString",
+            "rhsOperand": "",
+            "operator": "isString",
+            "status": "pass"
+          },
+          {
+            "uid": "BBl1ICzxnwc8CHPWuaRBu",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.881679428,
+        "name": "Authorise",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Authorise",
+        "path": "Authorise.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Create Booking.yml"
+        },
+        "request": {
+          "method": "post",
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Cookie": "********"
+          },
+          "data": "{\n    \"firstname\": \"Lucia\",\n    \"lastname\": \"Perez\",\n    \"totalprice\": 210,\n    \"depositpaid\": true,\n    \"bookingdates\": {\n      \"checkin\": \"2026-11-01\",\n      \"checkout\": \"2026-11-04\"\n    },\n    \"additionalneeds\": \"Breakfast\"\n  }"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "197",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 11:40:51 GMT",
+            "etag": "W/\"c5-bNMK+uGyihHGltr4OfVUotjXaH4\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=XXIXAjsmOIl71Z4PNysS8tJ38DXWu%2Fw2N%2Bg6cl5i8FI%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786362051\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=XXIXAjsmOIl71Z4PNysS8tJ38DXWu%2Fw2N%2Bg6cl5i8FI%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786362051\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": {
+            "bookingid": 39,
+            "booking": {
+              "firstname": "Lucia",
+              "lastname": "Perez",
+              "totalprice": 210,
+              "depositpaid": true,
+              "bookingdates": {
+                "checkin": "2026-11-01",
+                "checkout": "2026-11-04"
+              },
+              "additionalneeds": "Breakfast"
+            }
+          },
+          "url": "https://restful-booker.herokuapp.com/booking",
+          "responseTime": 656,
+          "duration": 656,
+          "size": 197
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "anrj17tTCGNE5SNl1OQk4",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "B9V8K4QKLf2Iv0nS1bLco",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          }
+        ],
+        "testResults": [
+          {
+            "description": "Server returned a Booking ID",
+            "status": "pass",
+            "uid": "8-94hpm1W9X-nOr8NAtQa"
+          },
+          {
+            "description": "Response includes booking data",
+            "status": "pass",
+            "uid": "TR44R1YsF2-MiTu9_C8T9"
+          },
+          {
+            "description": "Booking data is registered on the correct passenger name",
+            "status": "pass",
+            "uid": "JBVvvaJCiDYkU6fdSLwG1"
+          },
+          {
+            "description": "The price is correct and the deposit was received",
+            "status": "pass",
+            "uid": "ifxg0gmTdw-u2TdbzTtPJ"
+          },
+          {
+            "description": "The desired dates were booked",
+            "status": "pass",
+            "uid": "yLjcCG9_dbkm9FYHqX-hL"
+          },
+          {
+            "description": "Server confirmed the same booking data that it was sent",
+            "status": "pass",
+            "uid": "svzM0k0WiQCtbTMJDzDPR"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.22006423,
+        "name": "Create Booking",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Create Booking",
+        "path": "Create Booking.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Check Booking Creation.yml"
+        },
+        "request": {
+          "method": "get",
+          "url": "https://restful-booker.herokuapp.com/booking/",
+          "headers": {
+            "Accept": "application/json",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-length": "740",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Mon, 10 Aug 2026 11:40:52 GMT",
+            "etag": "W/\"2e4-+XxeU8GYlp1/JQuuEMGQTGMw74o\"",
+            "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+            "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=CY%2F2o%2FheNqygMw%2BAcfRodmw5KQL2INf%2F6bQYzOGW2UQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1786362052\"}],\"max_age\":3600}",
+            "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=CY%2F2o%2FheNqygMw%2BAcfRodmw5KQL2INf%2F6bQYzOGW2UQ%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1786362052\"",
+            "server": "Heroku",
+            "via": "1.1 heroku-router",
+            "x-powered-by": "Express",
+            "connection": "close"
+          },
+          "data": [
+            {
+              "bookingid": 1
+            },
+            {
+              "bookingid": 2
+            },
+            {
+              "bookingid": 3
+            },
+            {
+              "bookingid": 4
+            },
+            {
+              "bookingid": 5
+            },
+            {
+              "bookingid": 6
+            },
+            {
+              "bookingid": 7
+            },
+            {
+              "bookingid": 8
+            },
+            {
+              "bookingid": 9
+            },
+            {
+              "bookingid": 10
+            },
+            {
+              "bookingid": 11
+            },
+            {
+              "bookingid": 12
+            },
+            {
+              "bookingid": 13
+            },
+            {
+              "bookingid": 14
+            },
+            {
+              "bookingid": 15
+            },
+            {
+              "bookingid": 16
+            },
+            {
+              "bookingid": 17
+            },
+            {
+              "bookingid": 18
+            },
+            {
+              "bookingid": 19
+            },
+            {
+              "bookingid": 20
+            },
+            {
+              "bookingid": 21
+            },
+            {
+              "bookingid": 22
+            },
+            {
+              "bookingid": 23
+            },
+            {
+              "bookingid": 24
+            },
+            {
+              "bookingid": 25
+            },
+            {
+              "bookingid": 26
+            },
+            {
+              "bookingid": 28
+            },
+            {
+              "bookingid": 29
+            },
+            {
+              "bookingid": 30
+            },
+            {
+              "bookingid": 31
+            },
+            {
+              "bookingid": 32
+            },
+            {
+              "bookingid": 33
+            },
+            {
+              "bookingid": 34
+            },
+            {
+              "bookingid": 36
+            },
+            {
+              "bookingid": 37
+            },
+            {
+              "bookingid": 38
+            },
+            {
+              "bookingid": 39
+            },
+            {
+              "bookingid": 40
+            },
+            {
+              "bookingid": 42
+            },
+            {
+              "bookingid": 43
+            },
+            {
+              "bookingid": 44
+            },
+            {
+              "bookingid": 46
+            },
+            {
+              "bookingid": 47
+            },
+            {
+              "bookingid": 48
+            }
+          ],
+          "url": "https://restful-booker.herokuapp.com/booking/",
+          "responseTime": 712,
+          "duration": 712,
+          "size": 740
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "9znGaDGl5kbTvw_9Sk3PI",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "agatueisrGv6ld7eiOvTm",
+            "lhsExpr": "res.body",
+            "rhsExpr": "isJson",
+            "rhsOperand": "",
+            "operator": "isJson",
+            "status": "pass"
+          }
+        ],
+        "testResults": [
+          {
+            "description": "Booking data is registered on the correct passenger name",
+            "status": "fail",
+            "error": "'booking' is not defined",
+            "uid": "xFqpsrz67GIaSSdzHtkqw"
+          },
+          {
+            "description": "The price is correct and the deposit was received",
+            "status": "fail",
+            "error": "'booking' is not defined",
+            "uid": "X3Cuj0p5qVzOhPqJ3R9Ol"
+          },
+          {
+            "description": "The desired dates were booked",
+            "status": "fail",
+            "error": "'booking' is not defined",
+            "uid": "95We0kiCGQ-vs3iCZfwDv"
+          }
+        ],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 1.167821316,
+        "name": "Check Booking Creation",
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Check Booking Creation",
+        "path": "Check Booking Creation.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Update Booking.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Update Booking",
+        "name": "Update Booking",
+        "path": "Update Booking.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Check Booking Update.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Check Booking Update",
+        "name": "Check Booking Update",
+        "path": "Check Booking Update.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Partial Update Booking.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Partial Update Booking",
+        "name": "Partial Update Booking",
+        "path": "Partial Update Booking.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Check Partial Booking Update.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Check Partial Booking Update",
+        "name": "Check Partial Booking Update",
+        "path": "Check Partial Booking Update.yml",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "Delete Booking.yml"
+        },
+        "request": {
+          "method": null,
+          "url": null,
+          "headers": null,
+          "data": null
+        },
+        "response": {
+          "status": "skipped",
+          "statusText": null,
+          "data": null,
+          "responseTime": 0
+        },
+        "status": "skipped",
+        "skipped": true,
+        "skipReason": "bail",
+        "assertionResults": [],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "runDuration": 0,
+        "suitename": "/home/rigo/Projects/Testing_course/api-tests/Booker/Delete Booking",
+        "name": "Delete Booking",
+        "path": "Delete Booking.yml",
+        "iterationIndex": 0
+      }
+    ],
+    "summary": {
+      "totalRequests": 10,
+      "passedRequests": 4,
+      "failedRequests": 1,
+      "errorRequests": 0,
+      "skippedRequests": 5,
+      "skippedByBail": 5,
+      "totalAssertions": 10,
+      "passedAssertions": 10,
+      "failedAssertions": 0,
+      "totalTests": 9,
+      "passedTests": 6,
+      "failedTests": 3,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  },
+  {
+    "iterationIndex": 1,
+    "results": [],
+    "summary": {
+      "totalRequests": 10,
+      "passedRequests": 0,
+      "failedRequests": 0,
+      "errorRequests": 0,
+      "skippedRequests": 10,
+      "skippedByUser": 0,
+      "skippedByBail": 10,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  },
+  {
+    "iterationIndex": 2,
+    "results": [],
+    "summary": {
+      "totalRequests": 10,
+      "passedRequests": 0,
+      "failedRequests": 0,
+      "errorRequests": 0,
+      "skippedRequests": 10,
+      "skippedByUser": 0,
+      "skippedByBail": 10,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalAssertions": 0,
+      "passedAssertions": 0,
+      "failedAssertions": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  }
+]

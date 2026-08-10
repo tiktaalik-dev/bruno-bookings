@@ -1,0 +1,97 @@
+info:
+  name: Create Booking
+  type: http
+  seq: 4
+
+http:
+  method: post
+  url: "{{BaseURL}}/:path"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Cookie
+      value: token={{TokenID}}
+    - name: Accept
+      value: application/json
+  params:
+    - name: path
+      value: booking
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // 1. Parse the JSON response body
+        const responseData = res.getBody();
+
+        // 2. Extract the token
+        const bookingId = responseData.bookingid;
+
+        // 3. Save it to the collection variables
+        if (bookingId) {
+          bru.setVar("BookingID", bookingId);
+        } else {
+          fail("Booking ID capture failed: 'bookingid' not found in response.");
+        }
+    - type: tests
+      code: |-
+        // Capture the response in a convenient constant
+        const body = res.getBody();
+
+        // Check whether the server returned a Booking ID
+        test("Server returned a Booking ID", function () {
+          expect(body).to.have.property("bookingid");
+          expect(Number.isInteger(body.bookingid)).to.be.true;
+        });
+
+        // Check the response to confirm the booking data matches what was requested
+        test("Server confirmed the same booking data that it was sent", function () {
+          test("Response includes booking data", function () {  
+          expect(body).to.have.property("booking");
+          expect(body.booking).to.be.an("object");
+          });
+          
+          // Only proceed if the body includes a booking data object
+          if (expect(body).to.have.property("booking")) {
+            
+            // Create an alias for the booking data block
+            const booking = body.booking;
+            
+          test("Booking data is registered on the correct passenger name", function () {
+            expect(booking.firstname).to.equal({{firstname}});
+            expect(booking.lastname).to.equal({{lastname}});
+          });
+
+          test("The price is correct and the deposit was received", function () {
+            expect(booking.totalprice).to.equal({{totalprice}});
+            expect(booking.depositpaid).to.equal({{depositpaid}});
+          });
+          
+          test("The desired dates were booked", function () {
+            expect(booking.bookingdates).to.be.an("object");
+            expect(booking.bookingdates.checkin).to.equal({{checkin}});
+            expect(booking.bookingdates.checkout).to.equal({{checkout}});
+          });
+          } else {
+            fail("The server response did not contain Booking Data!");
+          }
+        });
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful.
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data.
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

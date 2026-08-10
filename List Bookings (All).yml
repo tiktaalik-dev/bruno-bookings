@@ -1,0 +1,28 @@
+info:
+  name: List Bookings (All)
+  type: http
+  seq: 2
+
+http:
+  method: get
+  url: "{{BaseURL}}/:path"
+  params:
+    - name: path
+      value: booking
+      type: path
+
+runtime:
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

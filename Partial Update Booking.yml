@@ -1,0 +1,70 @@
+info:
+  name: Partial Update Booking
+  type: http
+  seq: 8
+
+http:
+  method: PATCH
+  url: https://restful-booker.herokuapp.com/booking/:id
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Accept
+      value: application/json
+    - name: Cookie
+      value: token={{TokenID}}
+  params:
+    - name: id
+      value: "{{BookingID}}"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "bookingdates": {
+          "checkin": "2026-08-01",
+          "checkout": "2026-08-04"
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        // Capture the response in a convenient constant
+        const body = res.getBody();
+
+        // Check the response to confirm the booking data matches what was requested
+        test("Server confirmed the same booking data that it was sent", function () {
+            
+          test("Booking data is registered on the correct passenger name", function () {
+            expect(body.firstname).to.equal("인아");
+            expect(body.lastname).to.equal("민");
+          });
+
+          test("The price is correct and the deposit was received", function () {
+            expect(body.totalprice).to.equal(123);
+            expect(body.depositpaid).to.equal(true);
+          });
+          
+          test("The desired dates were booked", function () {
+            expect(body.bookingdates).to.be.an("object");
+            expect(body.bookingdates.checkin).to.equal("2026-08-01");
+            expect(body.bookingdates.checkout).to.equal("2026-08-04");
+          });
+        });
+  assertions:
+    - expression: res.status
+      operator: eq
+      value: "200"
+      description: Request was successful.
+    - expression: res.body
+      operator: isJson
+      description: Response contains JSON data.
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

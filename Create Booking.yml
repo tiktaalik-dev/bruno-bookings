@@ -19,7 +19,18 @@ http:
       type: path
   body:
     type: json
-    data: ""
+    data: |-
+      {
+        "firstname":",
+        "lastname": "민",
+        "totalprice": 123,
+        "depositpaid": true,
+        "bookingdates": {
+          "checkin": "2026-08-01",
+          "checkout": "2026-08-03"
+        },
+        "additionalneeds": "Breakfast, Lunch"
+      }
   auth: inherit
 
 runtime:
